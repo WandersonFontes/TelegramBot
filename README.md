@@ -1,7 +1,7 @@
 # :robot: Telegram Bot
 >Esse foi um desafio propsto para a vaga de Desenvolvedor Python
 
-[:world_map: Clique aqui e saiba mais sobre o projeto!](https://lapis-request-c58.notion.site/Telegram-Bot-d6509a8d5f414fdaab10a2bffd4327b3)
+### [:world_map: Clique aqui e saiba mais sobre o projeto!](https://lapis-request-c58.notion.site/Telegram-Bot-d6509a8d5f414fdaab10a2bffd4327b3)
 
 ## Siga os seguintes passos para exeutar o projeto:
 
@@ -29,3 +29,8 @@ python manage.py runserver
 
 http://127.0.0.1:8000/api/v1/
 >em caso de erro http://127.0.0.1:####/api/v1/ confira a porta no termial e corriga no navegador e tente novamente!
+
+## Observações
+>Consideramos que você tenha o RabbitMQ instalado na máquina para que o processo de consulta de usuário e o envio de mensagens seja gerenciado por e acompanhado por essa ferramenta.
+
+

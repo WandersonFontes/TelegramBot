@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Acount, Users, SendMessage, ReceivedMessage
+from .models import Account, Users, SendMessage, ReceivedMessage
 
 
-@admin.register(Acount)
-class AcountAdmin(admin.ModelAdmin):
-    model = Acount
+@admin.register(Account)
+class AccountAdmin(admin.ModelAdmin):
+    model = Account
 
 
 @admin.register(Users)

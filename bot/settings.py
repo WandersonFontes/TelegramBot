@@ -122,11 +122,10 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny']
 }
 
-TELEGRAM_TOKEN = '1993429487:AAGddZhjZt_nnlfpW5GHj5yKRl8JZwEaE9o'
+TELEGRAM_TOKEN = '1796130325:AAHfVzm2Plcr-l29Tr8L2lAQSWli5YKXzQs'
+
+
+#CELERY_BROKER_URL= 'amqp://guest:guest@localhost:15672'

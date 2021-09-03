@@ -1,13 +1,13 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from .models import Acount, Users, SendMessage, ReceivedMessage
+from .models import Account, Users, SendMessage, ReceivedMessage
 
 
-class AcountSerializer(serializers.HyperlinkedModelSerializer):
+class AccountSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Acount
+        model = Account
         fields = [
-            'bot_id', 
+            'id', 
             'first_name', 
             'username', 
             'can_join_groups',
@@ -20,9 +20,10 @@ class UsersSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Users
         fields = [
-            'user_id', 
+            'id', 
             'name', 
             'user', 
+            'link',
         ]
 
 

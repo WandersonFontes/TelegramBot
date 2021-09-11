@@ -125,7 +125,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny']
 }
 
-TELEGRAM_TOKEN = '1796130325:AAHfVzm2Plcr-l29Tr8L2lAQSWli5YKXzQs'
+TELEGRAM_TOKEN = '1956907428:AAFjuJcvvHEOVQGQ6cdoPxqAJlGJjcz60-E'
 
 
 #CELERY_BROKER_URL= 'amqp://guest:guest@localhost:15672'

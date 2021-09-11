@@ -33,4 +33,9 @@ http://127.0.0.1:8000/api/v1/
 ## Observações
 >Consideramos que você tenha o RabbitMQ instalado na máquina para que o processo de consulta de usuário e o envio de mensagens seja gerenciado por e acompanhado por essa ferramenta.
 
+### Execute o seguinte comando dentro do diretório do projeto:
+```console
+celery -A bot worker -l info -P solo
+```
+
 

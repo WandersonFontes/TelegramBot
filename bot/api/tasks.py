@@ -1,13 +1,10 @@
 from __future__ import absolute_import, unicode_literals
-from .serializers import AccountSerializer, UsersSerializer, SendMessageSerializer, ReceivedMessageSerializer     
-from .models import Account, Users, SendMessage, ReceivedMessage
-from django.http import HttpResponse, HttpResponseRedirect
-from rest_framework.response import Response
-from rest_framework.decorators import action
-from rest_framework import viewsets, status
 from django.conf import settings
-import requests, json
 from celery import shared_task
+from .serializers import *
+from .models import *
+import requests
+
 
 token = settings.TELEGRAM_TOKEN
 
@@ -16,7 +13,6 @@ def infoBot():
     '''
     Method to get bot data
     '''
-
     queryset = Account.objects.all()
     serializer_class = AccountSerializer
 
@@ -37,7 +33,6 @@ def checkUpdates():
     '''
     Method to get data from authorized users
     '''
-
     queryset = Users.objects.all()
     serializer_class = UsersSerializer
 
@@ -67,14 +62,13 @@ def checkUpdates():
                 serializer.save()
                 return 'UPDATED SUCESSFULY'
             return 'ERROR'
-        return 'No news'
+        return 'NO NEWS'
 
 @shared_task
 def sendMessage():
     '''
     Method to get send messages and save to database
     '''
-
     queryset = SendMessage.objects.all()
     serializer_class = SendMessageSerializer
 

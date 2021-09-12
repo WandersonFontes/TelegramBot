@@ -1,12 +1,12 @@
-from .serializers import AccountSerializer, UsersSerializer, SendMessageSerializer, ReceivedMessageSerializer     
-from .models import Account, Users, SendMessage, ReceivedMessage
 from django.http import HttpResponse, HttpResponseRedirect
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from rest_framework import viewsets, status
 from django.conf import settings
 from .tasks import *
-import requests, json
+from .serializers import *
+from .models import *
+import requests
 
 
 class AccountViewSet(viewsets.ModelViewSet):
@@ -47,10 +47,11 @@ class SendMessageViewSet(viewsets.ModelViewSet):
     """
     Endpoint used to send messages and register them in the database.
     """
-    token = settings.TELEGRAM_TOKEN
     queryset = SendMessage.objects.all()
     serializer_class = SendMessageSerializer
     http_method_names = ['get', 'post']
+    token = settings.TELEGRAM_TOKEN
+
 
     @action(detail=False, url_path='send', url_name='send', methods=['post'])
     def sendMessage(self, request):

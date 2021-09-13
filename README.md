@@ -31,9 +31,10 @@ http://127.0.0.1:8000/api/v1/
 >em caso de erro http://127.0.0.1:####/api/v1/ confira a porta no termial e corriga no navegador e tente novamente!
 
 ## Observações
->Consideramos que você tenha o RabbitMQ instalado na máquina para que o processo de consulta de usuário e o envio de mensagens seja gerenciado por e acompanhado por essa ferramenta.
+>É necessário que você tenha o RabbitMQ instalado na máquina para que todos processos sejam executadas com sucesso!
 
 ### Execute o seguinte comando dentro do diretório do projeto:
+>No mesmo diretório que for executado o comando para ativar servidor local.
 ```console
 celery -A bot worker -l info -P solo
 ```

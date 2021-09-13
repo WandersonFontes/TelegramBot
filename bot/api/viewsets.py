@@ -7,6 +7,7 @@ from .tasks import *
 from .serializers import *
 from .models import *
 import requests
+import time
 
 
 class AccountViewSet(viewsets.ModelViewSet):
@@ -38,6 +39,16 @@ class UsersViewSet(viewsets.ModelViewSet):
     def checkUpdates(self, request):
         try:
             checkUpdates.delay()
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        except Exception as e:
+            return HttpResponse('ERROR', status=404)
+
+    @action(detail=False, url_path='autoup', url_name='autoup', methods=['get'])
+    def autoUpdates(self, request):
+        try:
+            while 1 == 1:
+                time.sleep(5)
+                checkUpdates.delay()
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         except Exception as e:
             return HttpResponse('ERROR', status=404)
@@ -80,6 +91,7 @@ class SendMessageViewSet(viewsets.ModelViewSet):
                 return HttpResponse('ERROR', status=404)
         except Exception as e:
             return HttpResponse('ERROR', status=404)
+    
 
 
 class ReceivedMessageViewSet(viewsets.ModelViewSet):

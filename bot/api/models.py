@@ -24,7 +24,7 @@ class Users(models.Model):
     class Meta:
         ordering = ('date_authorization',)
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class SendMessage(models.Model):

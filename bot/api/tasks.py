@@ -50,7 +50,6 @@ def checkUpdates():
 
         if user:
             pass
-
         else:
             userId = d[key]['from']['id']
             d[key]['from']['name'] = d[key]['from']['first_name']+' '+d[key]['from']['last_name']
@@ -62,7 +61,7 @@ def checkUpdates():
                 serializer.save()
                 return 'UPDATED SUCESSFULY'
             return 'ERROR'
-        return 'NO NEWS'
+    return 'NO NEWS'
 
 @shared_task
 def sendMessage():

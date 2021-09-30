@@ -1,5 +1,5 @@
 # :robot: Telegram Bot
->Esse foi um desafio propsto para a vaga de Desenvolvedor Python
+>Esse é uma API envio de mensagens no Telegram com DRF, Celery e RabbitMq
 
 ### [:world_map: Clique aqui e saiba mais sobre o projeto!](https://lapis-request-c58.notion.site/Telegram-Bot-d6509a8d5f414fdaab10a2bffd4327b3)
 
